@@ -15,7 +15,7 @@ class NewsContentActivity : AppCompatActivity() {
     companion object {
         fun actionStart(context: Context, title: String, content: String) {
             val intent = Intent(context, NewsContentActivity::class.java).apply {
-                putExtra("name_title", title)
+                putExtra("news_title", title)
                 putExtra("news_content", content)
             }
             context.startActivity(intent)
@@ -27,7 +27,7 @@ class NewsContentActivity : AppCompatActivity() {
         binding = ActivityNewsContentBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val title = intent.getStringExtra("news_title")
-        val content = intent.getStringExtra("content")
+        val content = intent.getStringExtra("news_content")
         if (title != null && content != null) {
             val fragment =
                 supportFragmentManager.findFragmentById(R.id.newsContentFrag) as NewsContentFragment
